@@ -11,11 +11,11 @@ import { SITE } from "@/config";
 const { pathname } = Astro.url;
 
 // Remove trailing slash from current pathname if exists
-const currentPath =
+const currentPath: string =
   pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
 
 const isActive = (path: string) => {
-  const currentPathArray = currentPath.split("/").filter(p => p.trim());
+  const currentPathArray = currentPath.split("/").filter((p: string) => p.trim());
   const pathArray = path.split("/").filter(p => p.trim());
 
   return currentPath === path || currentPathArray[0] === pathArray[0];
@@ -73,7 +73,7 @@ const isActive = (path: string) => {
       >
         <li class="col-span-2">
           <a href="/posts" class:list={{ "active-nav": isActive("/posts") }}>
-            Posts
+            Stories
           </a>
         </li>
         <li class="col-span-2">
@@ -81,11 +81,11 @@ const isActive = (path: string) => {
             Tags
           </a>
         </li>
-        <li class="col-span-2">
+        <!-- <li class="col-span-2">
           <a href="/about" class:list={{ "active-nav": isActive("/about") }}>
             About
           </a>
-        </li>
+        </li> -->
         {
           SITE.showArchives && (
             <li class="col-span-2">

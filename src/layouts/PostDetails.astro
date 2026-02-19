@@ -33,6 +33,7 @@ const {
   timezone,
   tags,
   hideEditPost,
+  isSeries,
 } = post.data;
 
 const { Content } = await render(post);
@@ -69,17 +70,55 @@ const layoutProps = {
 
 /* ========== Prev/Next Posts ========== */
 
-const allPosts = posts.map(({ data: { title }, id, filePath }) => ({
-  id,
-  title,
-  filePath,
-}));
+const allPosts = posts.map(
+  ({ data: { title, chapter, series }, id, filePath }) => ({
+    id,
+    title,
+    filePath,
+    chapter,
+    series,
+  })
+);
 
 const currentPostIndex = allPosts.findIndex(a => a.id === post.id);
 
-const prevPost = currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : null;
-const nextPost =
-  currentPostIndex !== allPosts.length ? allPosts[currentPostIndex + 1] : null;
+type Post = {
+  id: string;
+  title: string;
+  filePath?: string;
+  chapter: number;
+  series?: string;
+} | null;
+
+let prevPost: Post = null;
+let nextPost: Post = null;
+
+if (isSeries) {
+  const seriesPosts = allPosts
+    .filter(p => p.series === post.data.series)
+    .sort((a, b) => (a.chapter ?? 0) - (b.chapter ?? 0));
+
+  const currentIndex = seriesPosts.findIndex(p => p.id === post.id);
+  prevPost = seriesPosts[currentIndex - 1];
+  nextPost = seriesPosts[currentIndex + 1];
+
+  if (!prevPost) {
+    prevPost = currentPostIndex !== 0 ? allPosts[currentPostIndex + 1] : allPosts[-1];
+  }
+
+  if (!nextPost) {
+    nextPost = currentPostIndex !== allPosts.length
+      ? (currentIndex !== 0 ? allPosts[currentPostIndex - 1] : allPosts[-1])
+      : allPosts[0];
+  }
+
+} else {
+  prevPost = currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : allPosts[-1];
+  nextPost =
+    currentPostIndex !== allPosts.length
+      ? allPosts[currentPostIndex + 1]
+      : allPosts[0];
+}
 ---
 
 <Layout {...layoutProps}>
