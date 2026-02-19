@@ -1,0 +1,28 @@
+<script>
+const sessionId =
+  localStorage.getItem("vicitales_session") ||
+  crypto.randomUUID();
+
+localStorage.setItem("vicitales_session", sessionId);
+
+let maxScroll = 0;
+
+window.addEventListener("scroll", () => {
+  const percent =
+    (window.scrollY + window.innerHeight) /
+    document.body.scrollHeight;
+
+  maxScroll = Math.max(maxScroll, Math.round(percent * 100));
+});
+
+window.addEventListener("beforeunload", () => {
+  navigator.sendBeacon(
+    "/api/visit",
+    JSON.stringify({
+      path: location.pathname,
+      sessionId,
+      scrollDepth: maxScroll
+    })
+  );
+});
+</script>
