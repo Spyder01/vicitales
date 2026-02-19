@@ -2,11 +2,11 @@
 title: The Memoir
 author: Suhan Bangera
 slug: the-memoir
-featured: true
 tags:
     - romance
     - amnesia
     - cute
+    - story
 description: A man wakes up with no memory of his past — except for the inexplicable pull he feels toward one girl. As fragments of their shared history slowly surface, he must decide whether love is something remembered… or something the heart refuses to forget.
 pubDatetime: 2025-12-20T15:57:52.737Z
 ---

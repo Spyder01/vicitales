@@ -1,7 +1,7 @@
 ---
 title: Red Lily Chapter 1
 author: Suhan Bangera
-slug: red-liliy-1
+slug: red-lily-1
 featured: true
 tags:
     - action
@@ -12,6 +12,9 @@ tags:
     - girl-boss
     - love 
 description: In a world of assassins and buried truths, the legendary Red Lily fights through blood, betrayal, and memory in a relentless search for justice. But as past wounds resurface and the cost of vengeance grows heavier, she must confront a question more dangerous than any enemy — how much of herself is she willing to lose to the war she cannot stop fighting?
+isSeries: true
+series: Red Lily 
+chapter: 1
 pubDatetime: 2025-10-01T15:57:52.737Z
 ---
 

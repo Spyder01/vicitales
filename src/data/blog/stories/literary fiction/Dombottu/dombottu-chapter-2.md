@@ -11,6 +11,8 @@ tags:
     - kola
     - coastal-karnataka
     - dombottu
+    - series
+    - story
 description: Despite his unwillingness Vihaan drives his uncle Keshav around the village, doing menial chores for the upcoming ritual, until he starts realizing something.
 isSeries: true
 series: Dombottu

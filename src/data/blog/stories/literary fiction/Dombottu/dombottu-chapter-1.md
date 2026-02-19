@@ -15,6 +15,8 @@ tags:
     - kola
     - coastal-karnataka
     - dombottu
+    - series
+    - story
 description: A village that belongs to a family that never wanted it. A debt old enough to have its own mythology. Dombottu is a story about what we inherit when we inherit everything.
 pubDatetime: 2026-01-12T15:57:52.737Z
 ---

@@ -9,6 +9,7 @@ tags:
     - religious-horror
     - silence
     - forbidden-love 
+    - story
 description: A forbidden love between a priest and a nun ignites a chain of sin, faith, and consequence that refuses to remain buried. As devotion turns into punishment and miracles blur into horror, one man must confront the price of silence — and the monster born from love, guilt, and eternity.
 pubDatetime: 2026-1-01T15:57:52.737Z
 ---
