@@ -34,7 +34,8 @@ export async function onRequestPost(context: any) {
       .run();
 
     return json({ success: true });
-  } catch {
+  } catch(err) {
+    console.log(err)
     return json({ error: "Internal error" }, 500);
   }
 }
