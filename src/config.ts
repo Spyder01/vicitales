@@ -4,7 +4,7 @@ export const SITE = {
   profile: "https://suhan.art",
   desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
   title: "Vicitales",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "V.png",
   lightAndDarkMode: true,
   postPerIndex: 5,
   postPerPage: 5,
