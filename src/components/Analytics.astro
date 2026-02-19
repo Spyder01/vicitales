@@ -1,63 +1,79 @@
 <script>
-const sessionId: string =
-  sessionStorage.getItem("vicitales_session") ||
-  crypto.randomUUID();
+(() => {
+  // -----------------------------
+  // Session
+  // -----------------------------
+  const sessionId =
+    sessionStorage.getItem("vicitales_session") ||
+    crypto.randomUUID();
 
-sessionStorage.setItem("vicitales_session", sessionId);
+  sessionStorage.setItem("vicitales_session", sessionId);
 
-let maxScroll = 0;
-let sendTimer: NodeJS.Timeout | null = null;
+  let maxScroll = 0;
+  let sendTimer = null;
+  let visitTimer = null;
 
-// -----------------------------
-// Calculate scroll depth
-// -----------------------------
-function calculateScroll() {
-  const scrollPercent =
-    (window.scrollY + window.innerHeight) /
-    document.documentElement.scrollHeight;
+  // -----------------------------
+  // Calculate scroll depth
+  // -----------------------------
+  function calculateScroll() {
+    const scrollPercent =
+      (window.scrollY + window.innerHeight) /
+      document.documentElement.scrollHeight;
 
-  const percent = Math.min(100, Math.round(scrollPercent * 100));
-  maxScroll = Math.max(maxScroll, percent);
-}
-
-// -----------------------------
-// Send analytics event
-// -----------------------------
-function sendVisit() {
-  navigator.sendBeacon(
-    "/api/visits",
-    JSON.stringify({
-      path: location.pathname,
-      sessionId,
-      scrollDepth: maxScroll
-    })
-  );
-}
-
-// -----------------------------
-// Scroll listener (throttled)
-// -----------------------------
-window.addEventListener("scroll", () => {
-  calculateScroll();
-  // send update after user pauses scrolling
-  clearTimeout(sendTimer!);
-  sendTimer = setTimeout(sendVisit, 1500);
-});
-
-// -----------------------------
-// Page navigation (Astro)
-// -----------------------------
-document.addEventListener("astro:page-load", () => {
-  maxScroll = 0;
-  sendVisit();
-});
-
-// -----------------------------
-// Leaving page
-// -----------------------------
-window.addEventListener("visibilitychange", () => {
-  if (document.visibilityState === "hidden") {
-    sendVisit();
+    const percent = Math.min(100, Math.round(scrollPercent * 100));
+    maxScroll = Math.max(maxScroll, percent);
   }
-});
+
+  // -----------------------------
+  // Send analytics
+  // -----------------------------
+  function sendVisit() {
+    navigator.sendBeacon(
+      "/api/visits",
+      JSON.stringify({
+        path: location.pathname,
+        sessionId,
+        scrollDepth: maxScroll
+      })
+    );
+  }
+
+  // -----------------------------
+  // Scroll tracking (throttled)
+  // -----------------------------
+  function onScroll() {
+    calculateScroll();
+
+    clearTimeout(sendTimer);
+    sendTimer = setTimeout(sendVisit, 1500);
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  // -----------------------------
+  // Astro navigation handling
+  // -----------------------------
+  function onPageLoad() {
+    maxScroll = 0;
+
+    // wait 5 seconds before counting visit
+    clearTimeout(visitTimer);
+    visitTimer = setTimeout(sendVisit, 5000);
+  }
+
+  document.addEventListener("astro:page-load", onPageLoad);
+
+  // First load
+  onPageLoad();
+
+  // -----------------------------
+  // Send when user leaves
+  // -----------------------------
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") {
+      sendVisit();
+    }
+  });
+})();
 </script>
