@@ -3,35 +3,54 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+## About Vicitales
 
-![Astro Paper](public/astropaper-og.jpg)
+Hi there 👋, I’m Suhan.
 
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
+**Vicitales** is my personal space for stories — a quiet corner of the internet where imagination, memory, and curiosity come together. The worlds you find here are shaped by moments of love, loss, chance encounters, and the small decisions that change lives in ways we rarely notice at first.
 
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
+Some stories are dark, some gentle, and some unfinished. All of them are evolving.
 
-## Features
+Vicitales exists so that these stories can live outside scattered notes and dusty folders on my computer, and instead grow alongside the readers who discover them.
 
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
+---
 
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
+## More Than a Story Site
 
-and so much more.
+Vicitales is also my experimentation ground.
 
-## Show your support
+Alongside writing fiction, I use this project to explore modern web architecture and Cloudflare’s serverless platform. Many features you see here — analytics, APIs, and infrastructure experiments — are built as learning steps before being applied to larger publishing platforms.
 
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
+In that sense, Vicitales is both:
 
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
+- 📖 a storytelling platform  
+- 🧪 a living technical laboratory
 
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
+---
 
-Kyay zuu! 🙏🏼
+## What You’ll Find Here
+
+- Serialized fiction and long-form stories  
+- Character-driven narratives and evolving worlds  
+- A calm, typography-first reading experience  
+- Ongoing experiments with edge-native web technology
+
+Every chapter published here is part of something still growing, still searching, still becoming.
+
+---
+
+## Credits
+
+Vicitales is built using the wonderful **[AstroPaper](https://github.com/satnaing/astro-paper)** theme, a minimal and beautifully crafted blog theme built with [Astro](https://astro.build/) and Tailwind CSS.
+
+AstroPaper provides the clean design, accessibility, and performance foundation that makes this reading experience possible. I’m deeply grateful to its creator and contributors for making it open source.
+
+If you appreciate the design and foundation of this site, please consider supporting the AstroPaper project.
+
+---
+
+## A Small Note
+
+If you choose to stay, begin anywhere.
+
+Every story has its own way of finding you.
