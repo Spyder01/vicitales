@@ -16,11 +16,11 @@ export async function onRequestPost(context: any) {
             return new Response("Blocked", { status: 403 });
         }
 
-        const contentType = request.headers.get("content-type");
+        // const contentType = request.headers.get("content-type");
 
-        if (!contentType?.includes("application/json")) {
-            return new Response("Invalid", { status: 400 });
-        }
+        // if (!contentType?.includes("application/json")) {
+        //     return new Response("Invalid", { status: 400 });
+        // }
 
         const body = await request.json();
 

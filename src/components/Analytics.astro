@@ -10,8 +10,8 @@
   sessionStorage.setItem("vicitales_session", sessionId);
 
   let maxScroll = 0;
-  let sendTimer = null;
-  let visitTimer = null;
+  let sendTimer: number | null = null;
+  let visitTimer: number | null = null;
 
   // -----------------------------
   // Calculate scroll depth
@@ -45,8 +45,8 @@
   function onScroll() {
     calculateScroll();
 
-    clearTimeout(sendTimer);
-    sendTimer = setTimeout(sendVisit, 1500);
+    clearTimeout(sendTimer!);
+    sendTimer = setTimeout(sendVisit, 1500) as unknown as number;
   }
 
   window.addEventListener("scroll", onScroll, { passive: true });
@@ -58,8 +58,8 @@
     maxScroll = 0;
 
     // wait 5 seconds before counting visit
-    clearTimeout(visitTimer);
-    visitTimer = setTimeout(sendVisit, 5000);
+    clearTimeout(visitTimer!);
+    visitTimer = setTimeout(sendVisit, 5000) as unknown as number;
   }
 
   document.addEventListener("astro:page-load", onPageLoad);

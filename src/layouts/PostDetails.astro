@@ -3,6 +3,7 @@ import { render, type CollectionEntry } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import Reaction from "@/components/Reaction.astro"; 
 import Tag from "@/components/Tag.astro";
 import Analytics from "@/components/Analytics.astro";
 import Datetime from "@/components/Datetime.astro";
@@ -157,15 +158,21 @@ if (isSeries) {
 
     <hr class="my-8 border-dashed" />
 
+
     <EditPost class="sm:hidden" {hideEditPost} {post} />
 
     <ul class="mt-4 mb-8 flex flex-wrap gap-4 sm:my-8">
       {tags.map(tag => <Tag tag={slugifyStr(tag)} tagName={tag} size="sm" />)}
     </ul>
 
+    <Reaction />
+
+    <hr class="my-8 border-dashed" />
+    
     <BackToTopButton />
 
     <ShareLinks />
+
 
     <hr class="my-6 border-dashed" />
 
