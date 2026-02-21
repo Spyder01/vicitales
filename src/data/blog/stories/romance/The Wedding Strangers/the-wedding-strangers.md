@@ -8,7 +8,7 @@ tags:
     - story
     - wedding
     - short-story
-description: A man wakes up with no memory of his past — except for the inexplicable pull he feels toward one girl. As fragments of their shared history slowly surface, he must decide whether love is something remembered… or something the heart refuses to forget.
+description: A crowded wedding, a dead phone, and a bench far enough away to escape the noise. Sam wanted to be alone with his thoughts—until Natalie decided to crash his bubble. A short story about unexpected honesty, "hitting it off," and the strange ways we find a dance partner.
 pubDatetime: 2023-11-20T15:57:52.737Z
 ---
 
