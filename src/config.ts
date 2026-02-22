@@ -1,8 +1,8 @@
 export const SITE = {
   website: "https://vicitales.suhan.art", // replace this with your deployed domain
   author: "Suhan Bangera",
-  profile: "https://suhan.art",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
+  profile: "https://vicitales.suhan.art",
+  desc: "A blog to publish my stories and poems",
   title: "Vicitales",
   ogImage: "V.png",
   lightAndDarkMode: true,
